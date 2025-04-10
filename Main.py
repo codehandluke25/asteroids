@@ -1,5 +1,7 @@
 import pygame
 from constants import *
+from circleshape import *
+from player import *
 
 
 
@@ -14,6 +16,8 @@ def main():
     
     while True:
         screen.fill(BLACK)
+        player = Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
+        player.draw(screen)
         pygame.display.flip()
         dt =   game_clock.tick(60) / 1000
         for event in pygame.event.get():
