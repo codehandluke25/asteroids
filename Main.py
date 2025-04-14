@@ -44,12 +44,14 @@ def main():
         dt =   game_clock.tick(60) / 1000 
 
         for asteroid in asteroids:
-            if player.collision(asteroid) == True : 
+            if player.collision(asteroid) == True: 
                 print ("Game over!")
                 pygame.quit()
                 sys.exit()     # This will exit the program
-        
-    
+        for asteroid in asteroids:
+            for shot in shots:
+                if shot.collision (asteroid) == True:
+                    asteroid.kill()
         
 if __name__ == "__main__":
     main()
